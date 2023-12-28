@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Memprediksi Dampak Kecanduan Bermain Game Terhadap Nilai Kuliah</h2>
+        <form id="predictionForm">
+            <div class="form-group">
+                <label for="waktu_bermain_perhari">Waktu Bermain per Hari:</label>
+                <input type="number" name="waktu_bermain_perhari" id="waktu_bermain_perhari" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sering_lalai_kerjakan_tugas">Sering Lalai Kerjakan Tugas:</label>
+                <select name="sering_lalai_kerjakan_tugas" id="sering_lalai_kerjakan_tugas" required>
+                    <option value="1">Tidak Pernah</option>
+                    <option value="2">Jarang</option>
+                    <option value="3">Netral</option>
+                    <option value="4">Pernah</option>
+                    <option value="5">Selalu</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="sering_melewatkan_waktu_tidur">Sering Melewatkan Waktu Tidur:</label>
+                <select name="sering_melewatkan_waktu_tidur" id="sering_melewatkan_waktu_tidur" required>
+                    <option value="1">Tidak Pernah</option>
+                    <option value="2">Jarang</option>
+                    <option value="3">Netral</option>
+                    <option value="4">Pernah</option>
+                    <option value="5">Selalu</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="kesulitan_mengurangi_waktu">Kesulitan Mengurangi Waktu:</label>
+                <select name="kesulitan_mengurangi_waktu" id="kesulitan_mengurangi_waktu" required>
+                    <option value="1">Tidak Pernah</option>
+                    <option value="2">Jarang</option>
+                    <option value="3">Netral</option>
+                    <option value="4">Pernah</option>
+                    <option value="5">Selalu</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="merasa_kekurangan_waktu">Merasa Kekurangan Waktu:</label>
+                <select name="merasa_kekurangan_waktu" id="merasa_kekurangan_waktu" required>
+                    <option value="2">Jarang</option>
+                    <option value="3">Netral</option>
+                    <option value="4">Pernah</option>
+                    <option value="5">Selalu</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pengaruh_tingkat_konsentrasi">Pengaruh Tingkat Konsentrasi:</label>
+                <select name="pengaruh_tingkat_konsentrasi" id="pengaruh_tingkat_konsentrasi" required>
+                    <option value="2">Jarang</option>
+                    <option value="3">Netral</option>
+                    <option value="4">Pernah</option>
+                    <option value="5">Selalu</option>
+                </select>
+            </div>
+
+        <button type="button" onclick="predict()">Predict</button>
+    </form>
+
+    <div id="predictionResultContainer">
+        <h3>Prediction Result:</h3>
+        <p id="predictionResult"></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
